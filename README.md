@@ -1,3 +1,12 @@
+# GarduinoApp
+This is another version of the GradyHillhouse where the data is stored in a local server instead of an SD card, 
+This porject consist of a webapp that receives the data from the server and send commands to the arduino card depending on the values received.
+
+Content: GarduinoApp.ino: the code of the arduino card
+	 WebApp folder contains the application, to run clone the directory and run npm install to download the dependencies
+
+
+
 # Introduction
 Gardening in the modern age means making things more complicated and arduous, with electrons, bits, and bytes. Behold: the garduino. My brother got me an arduino microcontroller board for Christmas, which to me was a solution looking for a problem. I finally found the problem: fresh herbs are expensive at the grocery store. But apparently not as expensive as adding a bunch of sensors and electronics to your garden.
 
