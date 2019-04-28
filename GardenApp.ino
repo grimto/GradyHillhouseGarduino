@@ -58,7 +58,7 @@ void setup() {
   pinMode(solenoidPin, OUTPUT); //solenoid pin
   digitalWrite(solenoidPin, LOW); //Make sure the valve is off
   analogReference(EXTERNAL); //Sets the max voltage from analog inputs to whatever is connected to the Aref pin (should be 3.3v)
-  
+
   //Establish connection with DHT sensor
   dht.begin();
   
@@ -76,11 +76,5 @@ void setup() {
     // following line sets the RTC to the date & time this sketch was compiled
     rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
-  
-  //Check if SD card is present and can be initialized
-  if (!SD.begin(chipSelect)) {
-    error("Card failed, or not present");        
   }
-  
-  Serial.println("Card initialized.");
-  }
+
