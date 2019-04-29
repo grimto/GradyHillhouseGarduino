@@ -59,25 +59,23 @@ board.on('ready', () => {
             board.digitalWrite(solenoidPin, LOW);
         }
         wateredToday = true;
-    }
-});
-sunLightPin.on('change', (value) => {
-    const sunLightValue = 'node-sunlight-monitor';
-    let V2 = value;
-    let sunLightRaw;
-    sunLightRaw = Math.pow(((((150 * 3.3) / (V2 * (3.3 / 1024))) - 150) / 70000), -1.25);
-    const sunLightMessage = {
-        sunLight: +sunLightRaw.toFixed(2)
-    };
-    dweetio.dweet_for(sunLightValue, sunLightMessage, (err, dweet) => {
-        if (err) {
-            console.log('[Error]', err);
-        }
-        if (dweet) {
-            console.log(dweet.content);
-        }
+    });
+    sunLightPin.on('change', (value) => {
+        const sunLightValue = 'node-sunlight-monitor';
+        let V2 = value;
+        let sunLightRaw;
+        sunLightRaw = Math.pow(((((150 * 3.3) / (V2 * (3.3 / 1024))) - 150) / 70000), -1.25);
+        const sunLightMessage = {
+            sunLight: +sunLightRaw.toFixed(2)
+        };
+        dweetio.dweet_for(sunLightValue, sunLightMessage, (err, dweet) => {
+            if (err) {
+                console.log('[Error]', err);
+            }
+            if (dweet) {
+                console.log(dweet.content);
+            }
+        });
     });
 });
 
-})
-;
